@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016", 
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./**/*.ts", "./prisma/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

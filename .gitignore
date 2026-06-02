@@ -1,0 +1,7 @@
+project-manager/node_modules
+server/node_modules
+project-manager/dist/
+server/dist/
+project-manager/.env
+server/.env
+project-manager/.next/
