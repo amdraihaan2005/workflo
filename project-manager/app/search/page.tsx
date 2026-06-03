@@ -309,11 +309,11 @@ const Search = () => {
                   Tasks
                 </h3>
                 <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-bold text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                  {searchResults.tasks?.length || 0}
+                  {searchResults?.tasks?.length || 0}
                 </span>
               </div>
               <div className="space-y-4 max-h-[600px] overflow-y-auto pr-1 scrollbar-thin">
-                {searchResults.tasks && searchResults.tasks.length > 0 ? (
+                {searchResults?.tasks && searchResults.tasks.length > 0 ? (
                   searchResults.tasks.map((task) => (
                     <TaskCard key={task.id} task={task} />
                   ))
@@ -330,11 +330,11 @@ const Search = () => {
                   Projects
                 </h3>
                 <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-bold text-green-800 dark:bg-green-900/30 dark:text-green-300">
-                  {searchResults.projects?.length || 0}
+                  {searchResults?.projects?.length || 0}
                 </span>
               </div>
               <div className="space-y-4 max-h-[600px] overflow-y-auto pr-1 scrollbar-thin">
-                {searchResults.projects && searchResults.projects.length > 0 ? (
+                {searchResults?.projects && searchResults.projects.length > 0 ? (
                   searchResults.projects.map((project) => (
                     <ProjectCard key={project.id} project={project} />
                   ))
@@ -351,11 +351,11 @@ const Search = () => {
                   Team Members
                 </h3>
                 <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-bold text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
-                  {searchResults.users?.length || 0}
+                  {searchResults?.users?.length || 0}
                 </span>
               </div>
               <div className="space-y-4 max-h-[600px] overflow-y-auto pr-1 scrollbar-thin">
-                {searchResults.users && searchResults.users.length > 0 ? (
+                {searchResults?.users && searchResults.users.length > 0 ? (
                   searchResults.users.map((user) => (
                     <UserCard key={user.userId} user={user} />
                   ))
