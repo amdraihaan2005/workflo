@@ -9,7 +9,7 @@ const NavBar = () => {
     const dispatch = useAppDispatch();
     const isSideBarCollapsed = useAppSelector((state) => state.global.isSideBarCollapsed);
     const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
-    const { signOut } = useAuthenticator((context) => [context.signOut]);
+    const { signOut } = useAuthenticator();
 
   return (
     <div className="flex items-center justify-between bg-white px-4 py-3 dark:bg-black">
@@ -51,7 +51,7 @@ const NavBar = () => {
             </Link>
             <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 md:inline-block"></div>
             <button
-                onClick={signOut}
+                onClick={() => signOut()}
                 className="flex items-center gap-2 rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-500/20 dark:text-red-400 dark:hover:bg-red-500/30 transition-all hover:scale-105 active:scale-95 cursor-pointer"
             >
                 <LogOut className="h-4 w-4" />
