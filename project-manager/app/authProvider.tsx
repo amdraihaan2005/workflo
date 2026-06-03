@@ -56,7 +56,9 @@ const AuthContainer = ({ children }: { children: React.ReactNode }) => {
   if (authStatus !== "authenticated") {
     return (
       <div className="flex h-screen w-full items-center justify-center bg-gray-50 dark:bg-black">
-        <Authenticator formFields={formFields} 
+        <Authenticator 
+          formFields={formFields} 
+          signUpAttributes={["email"]}
         />
       </div>
     );
