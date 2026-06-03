@@ -9,11 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.15.4",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.4",
     "@mui/x-data-grid": "^8.28.6",
     "@reduxjs/toolkit": "^2.9.1",
+    "aws-amplify": "^6.17.0",
     "axios": "^1.12.2",
     "date-fns": "^4.1.0",
     "dot": "^1.1.3",
