@@ -119,8 +119,11 @@ export const api = createApi({
       }),
       invalidatesTags: ["Projects"],
     }),
-    getTasks: build.query<Task[], { projectId: number }>({
-      query: ({ projectId }) => `tasks?projectId=${projectId}`,
+    getTasks: build.query<Task[], { projectId?: number } | void>({
+      query: (params) => {
+        const projectId = params?.projectId;
+        return projectId !== undefined ? `tasks?projectId=${projectId}` : "tasks";
+      },
       providesTags: (result) =>
         result
           ? result.map(({ id }) => ({ type: "Tasks" as const, id }))
@@ -155,6 +158,29 @@ export const api = createApi({
       query: () => "users",
       providesTags: ["Users"],
     }),
+    getUser: build.query<User, string>({
+      query: (cognitoId) => `users/${cognitoId}`,
+      providesTags: (result, error, cognitoId) => [{ type: "Users", id: cognitoId }],
+    }),
+    createUser: build.mutation<User, Partial<User>>({
+      query: (user) => ({
+        url: "users",
+        method: "POST",
+        body: user,
+      }),
+      invalidatesTags: ["Users"],
+    }),
+    updateUser: build.mutation<User, { cognitoId: string; username?: string; profilePictureUrl?: string; teamId?: number | null }>({
+      query: ({ cognitoId, ...body }) => ({
+        url: `users/${cognitoId}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: (result, error, { cognitoId }) => [
+        { type: "Users", id: cognitoId },
+        "Users",
+      ],
+    }),
     getTeams: build.query<Team[], void>({
       query: () => "teams",
       providesTags: ["Teams"],
@@ -173,6 +199,9 @@ export const {
   useUpdateTaskStatusMutation,
   useSearchQuery,
   useGetUsersQuery,
+  useGetUserQuery,
+  useCreateUserMutation,
+  useUpdateUserMutation,
   useGetTeamsQuery,
   useGetTasksByUserQuery,
   /* useGetAuthUserQuery, */
