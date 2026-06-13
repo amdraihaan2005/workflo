@@ -11,7 +11,7 @@
  · [Live Demo](https://master.ddcbu868f5p67.amplifyapp.com) · 
 <p align="center">
 
-## 💡 Why WorkFlo?
+## Why WorkFlo?
 
 Most project management platforms are overloaded with enterprise-level features that small teams simply don't use. WorkFlo eliminates that friction, offering a fine-tuned application focused entirely on immediate usability and minimal learning curves.
 
@@ -21,7 +21,7 @@ Most project management platforms are overloaded with enterprise-level features 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 * **Project & Task Management:** Create, update, and organize team projects effortlessly.
 * **Priority-Based Workflows:** Visually sort and track tasks by immediate priority levels.
@@ -32,7 +32,7 @@ Most project management platforms are overloaded with enterprise-level features 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -71,7 +71,7 @@ Most project management platforms are overloaded with enterprise-level features 
 ---
 
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 <table>
   <tr>
